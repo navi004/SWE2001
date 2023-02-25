@@ -44,7 +44,11 @@ int main() {
 switch(option) {
     case 1:
          printf("Enter the number of elements to be pushed :");
-         scanf("%d",&n) ;                                         
+         if(scanf("%d",&n) != 1) {
+              printf("Invalid input.Enter an integer:\n");
+              while(getchar() != '\n');                       //to clear input buffer
+                 continue;
+                }
          if(n<=MAX) {
             for(int i=0; i<n; i++) {
                  printf("Enter the value to be pushed :");       //checking whether input is an integer
